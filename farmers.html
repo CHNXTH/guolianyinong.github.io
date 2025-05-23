@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>农户赋能 - 果链益农</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/farmers.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="果链益农">
+                    <span class="logo-text">果链益农</span>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="index.html">首页</a>
+                    <a href="products.html">产品展示</a>
+                    <a href="model.html">模式展示</a>
+                    <a href="farmers.html" class="active">农户赋能</a>
+                    <a href="data.html">数据政策</a>
+                    <a href="order.html">订购合作</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 全屏背景 -->
+    <header class="page-hero">
+        <div class="hero-background" style="background-image: url('assets/farmers-hero-bg.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>农户赋能</h1>
+                    <p>科技助农 · 共同富裕 · 乡村振兴</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 农户案例墙 -->
+    <section class="farmer-cases">
+        <div class="container">
+            <h2>成功案例</h2>
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="farmer-info">
+                        <img src="assets/farmers/farmer1.jpg" alt="张大叔的果园故事">
+                        <h3>张大叔的果园故事</h3>
+                    </div>
+                    <div class="video-container">
+                        <video class="player" playsinline controls data-poster="assets/farmers/video-thumb1.jpg">
+                            <source src="assets/farmers/story1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+                <div class="case-card">
+                    <div class="farmer-info">
+                        <img src="assets/farmers/farmer2.jpg" alt="李阿姨的致富经">
+                        <h3>李阿姨的致富经</h3>
+                    </div>
+                    <div class="video-container">
+                        <video class="player" playsinline controls data-poster="assets/farmers/video-thumb2.jpg">
+                            <source src="assets/farmers/story2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 收入对比图 -->
+    <section class="income-comparison">
+        <div class="container">
+            <h2>收入对比</h2>
+            <div class="chart-container">
+                <canvas id="incomeChart"></canvas>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">+168%</div>
+                    <div class="stat-label">平均增收比例</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12.5万</div>
+                    <div class="stat-label">年均收入</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">农户满意度</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们 -->
+    <section class="join-us">
+        <div class="container">
+            <h2>加入我们</h2>
+            <div class="join-content">
+                <div class="join-text">
+                    <h3>为什么选择我们？</h3>
+                    <ul class="benefits-list">
+                        <li><i class="fas fa-check-circle"></i> 专业技术指导</li>
+                        <li><i class="fas fa-check-circle"></i> 保底收购价格</li>
+                        <li><i class="fas fa-check-circle"></i> 免费培训课程</li>
+                        <li><i class="fas fa-check-circle"></i> 农资优惠供应</li>
+                    </ul>
+                </div>
+                <form class="join-form" id="joinForm">
+                    <div class="form-group">
+                        <label for="name">姓名</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">联系电话</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="intention">合作意向</label>
+                        <select id="intention" name="intention" required>
+                            <option value="">请选择</option>
+                            <option value="join">加入合作社</option>
+                            <option value="learn">技术培训</option>
+                            <option value="supply">果品供应</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="submit-btn">提交申请</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 农旅路线 -->
+    <section class="agri-tourism">
+        <div class="container">
+            <h2>农旅推荐路线</h2>
+            <div class="route-map">
+                <div class="map-container">
+                    <!-- SVG 地图将通过 JavaScript 动态加载 -->
+                </div>
+                <div class="route-list">
+                    <div class="route-item">
+                        <div class="route-number">1</div>
+                        <div class="route-info">
+                            <h3>桃花观赏</h3>
+                            <p>春季赏花 · 拍照打卡</p>
+                        </div>
+                    </div>
+                    <div class="route-item">
+                        <div class="route-number">2</div>
+                        <div class="route-info">
+                            <h3>果园采摘</h3>
+                            <p>现摘现尝 · 亲子互动</p>
+                        </div>
+                    </div>
+                    <div class="route-item">
+                        <div class="route-number">3</div>
+                        <div class="route-info">
+                            <h3>加工体验</h3>
+                            <p>果酱制作 · 技艺传承</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 客户故事轮播 -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>客户故事</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/testimonials/client1.jpg" alt="王女士">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"加入合作社后，不仅收入提高了，还学到了很多新技术。"</p>
+                            <div class="testimonial-author">王女士</div>
+                            <div class="testimonial-role">果园主</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/testimonials/client2.jpg" alt="赵先生">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"现在的果园管理更科学了，产量和品质都有明显提升。"</p>
+                            <div class="testimonial-author">赵先生</div>
+                            <div class="testimonial-role">合作社成员</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-image">
+                            <img src="assets/testimonials/client3.jpg" alt="李大姐">
+                        </div>
+                        <div class="testimonial-content">
+                            <p>"通过农旅项目，果园收入更加多元化了。"</p>
+                            <div class="testimonial-author">李大姐</div>
+                            <div class="testimonial-role">农家乐经营者</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                    <button class="next-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>果链益农</h4>
+                    <p>一颗金桃 三代坚守 百姓增收</p>
+                </div>
+                <div class="footer-contact">
+                    <p>联系电话：<a href="tel:+86-XXX-XXXX-XXXX">XXX-XXXX-XXXX</a></p>
+                    <p>邮箱：<a href="mailto:contact@example.com">contact@example.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 果链益农. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/farmers.js"></script>
+</body>
+</html> 

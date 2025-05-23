@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 果链益农</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- 高德地图 API -->
+    <script type="text/javascript" src="https://webapi.amap.com/maps?v=2.0&key=YOUR_AMAP_KEY"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="果链益农">
+                    <span class="logo-text">果链益农</span>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="index.html">首页</a>
+                    <a href="products.html">产品展示</a>
+                    <a href="model.html">模式展示</a>
+                    <a href="farmers.html">农户赋能</a>
+                    <a href="data.html">数据政策</a>
+                    <a href="order.html">订购合作</a>
+                    <a href="contact.html" class="active">联系我们</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 全屏背景 -->
+    <header class="page-hero">
+        <div class="hero-background" style="background-image: url('assets/contact-hero-bg.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>联系我们</h1>
+                    <p>共创果业未来 · 携手共赢发展</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 地图区域 -->
+    <section class="map-section">
+        <div class="container">
+            <h2>我们的位置</h2>
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="location-list">
+                    <div class="location-item active" data-type="orchard">
+                        <i class="fas fa-tree"></i>
+                        <span>果园基地</span>
+                    </div>
+                    <div class="location-item" data-type="factory">
+                        <i class="fas fa-industry"></i>
+                        <span>加工点</span>
+                    </div>
+                    <div class="location-item" data-type="store">
+                        <i class="fas fa-store"></i>
+                        <span>体验店</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系信息 -->
+    <section class="contact-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h3>公司地址</h3>
+                    <p>山东省淄博市沂源县果品市场</p>
+                    <p>果链益农产业园区</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <h3>联系电话</h3>
+                    <p>客服热线：400-XXX-XXXX</p>
+                    <p>商务合作：0533-XXXXXXXX</p>
+                </div>
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>电子邮箱</h3>
+                    <p>客户服务：service@example.com</p>
+                    <p>商务合作：business@example.com</p>
+                </div>
+                <div class="info-card">
+                    <i class="fab fa-weixin"></i>
+                    <h3>微信公众号</h3>
+                    <div class="qr-code">
+                        <img src="assets/wechat-qr.png" alt="微信公众号二维码">
+                    </div>
+                    <p>扫码关注果链益农</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们 -->
+    <section class="join-us">
+        <div class="container">
+            <div class="join-content">
+                <h2>加入果链益农</h2>
+                <p>与我们一起，共创果业新未来</p>
+                <a href="order.html#cooperation" class="cta-button">立即合作</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>果链益农</h4>
+                    <p>一颗金桃 三代坚守 百姓增收</p>
+                </div>
+                <div class="footer-contact">
+                    <p>联系电话：<a href="tel:+86-XXX-XXXX-XXXX">XXX-XXXX-XXXX</a></p>
+                    <p>邮箱：<a href="mailto:contact@example.com">contact@example.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 果链益农. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/contact.js"></script>
+</body>
+</html> 

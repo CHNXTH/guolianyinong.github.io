@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品展示 - 果链益农</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-left">
+                <div class="logo">
+                    <img src="assets/logo.png" alt="果链益农">
+                    <span class="logo-text">果链益农</span>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="nav-links">
+                    <a href="index.html">首页</a>
+                    <a href="products.html" class="active">产品展示</a>
+                    <a href="model.html">模式展示</a>
+                    <a href="farmers.html">农户赋能</a>
+                    <a href="data.html">数据政策</a>
+                    <a href="order.html">订购合作</a>
+                    <a href="contact.html">联系我们</a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="搜索...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+            </div>
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 全屏背景 -->
+    <header class="page-hero">
+        <div class="hero-background" style="background-image: url('assets/products-hero-bg.jpg');">
+            <div class="hero-overlay">
+                <div class="hero-content">
+                    <h1>臻选果品</h1>
+                    <p>传承三代匠心 · 只为极致品质</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 产品介绍卡片 -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="assets/golden-peach.jpg" alt="沂源金黄金桃">
+                </div>
+                <div class="product-info">
+                    <h1>沂源金黄金桃</h1>
+                    <div class="quality-indicators">
+                        <div class="indicator">
+                            <i class="fas fa-tint"></i>
+                            <span class="value">18°+</span>
+                            <span class="label">糖度</span>
+                        </div>
+                        <div class="indicator">
+                            <i class="fas fa-flask"></i>
+                            <span class="value">2.8mg</span>
+                            <span class="label">高铁含量</span>
+                        </div>
+                        <div class="indicator">
+                            <i class="fas fa-shield-alt"></i>
+                            <span class="value">强</span>
+                            <span class="label">抗氧化力</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品质对比图表 -->
+    <section class="quality-comparison">
+        <div class="container">
+            <h2>品质对比</h2>
+            <div class="chart-container">
+                <canvas id="qualityChart"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品包装展示 -->
+    <section class="product-packages">
+        <div class="container">
+            <h2>产品系列</h2>
+            <div class="package-grid">
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="assets/gift-box.jpg" alt="礼盒装">
+                    </div>
+                    <div class="package-info">
+                        <h3>尊享礼盒装</h3>
+                        <p>精选特级果品，高端礼盒包装</p>
+                        <div class="price">¥288.00</div>
+                        <a href="order.html" class="buy-btn">立即购买</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="assets/fresh-pack.jpg" alt="鲜果装">
+                    </div>
+                    <div class="package-info">
+                        <h3>精选鲜果装</h3>
+                        <p>新鲜采摘，产地直发</p>
+                        <div class="price">¥168.00</div>
+                        <a href="order.html" class="buy-btn">立即购买</a>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">
+                        <img src="assets/dried-combo.jpg" alt="果干组合">
+                    </div>
+                    <div class="package-info">
+                        <h3>果干礼盒组合</h3>
+                        <p>零添加工艺，保留原味</p>
+                        <div class="price">¥198.00</div>
+                        <a href="order.html" class="buy-btn">立即购买</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展时间线 -->
+    <section class="timeline-section">
+        <div class="container">
+            <h2>企业发展历程</h2>
+            <div class="timeline-container">
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="year">2018</div>
+                        <div class="content">果链益农项目启动</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2019</div>
+                        <div class="content">建立首个社区加工点</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2020</div>
+                        <div class="content">获得国家级农业示范基地认证</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2021</div>
+                        <div class="content">产品线扩展，推出果干系列</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2022</div>
+                        <div class="content">农旅融合项目启动</div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="year">2023</div>
+                        <div class="content">加工点网络覆盖全县</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 品牌优势 -->
+    <section class="brand-advantages">
+        <div class="container">
+            <h2>品牌优势</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fas fa-award"></i>
+                    <h3>品质信赖</h3>
+                    <p>严格品控，可追溯种植</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-industry"></i>
+                    <h3>创新加工</h3>
+                    <p>科技赋能，保鲜增值</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-handshake"></i>
+                    <h3>农户共赢</h3>
+                    <p>利益共享，携手发展</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>果链益农</h4>
+                    <p>一颗金桃 三代坚守 百姓增收</p>
+                </div>
+                <div class="footer-contact">
+                    <p>联系电话：<a href="tel:+86-XXX-XXXX-XXXX">XXX-XXXX-XXXX</a></p>
+                    <p>邮箱：<a href="mailto:contact@example.com">contact@example.com</a></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 果链益农. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/products.js"></script>
+</body>
+</html> 
