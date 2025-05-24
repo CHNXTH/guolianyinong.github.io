@@ -6,6 +6,7 @@
     <title>果链益农 - 一颗金桃 三代坚守 百姓增收</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
     <!-- 导航栏 -->
@@ -44,62 +45,164 @@
     <header class="hero">
         <video autoplay muted loop id="hero-video">
             <source src="assets/hero-video.mp4" type="video/mp4">
-            <!-- 视频不支持时的背景图片 -->
             <img src="assets/hero-bg.jpg" alt="果园场景">
         </video>
         <div class="hero-content">
-            <h1 class="slogan">一颗金桃 三代坚守 百姓增收</h1>
-            <p class="sub-slogan">传承匠心品质 · 创新果业发展</p>
+            <h1 class="slogan" data-aos="fade-up">一颗金桃 三代坚守 百姓增收</h1>
+            <p class="sub-slogan" data-aos="fade-up" data-aos-delay="200">传承匠心品质 · 创新果业发展</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                <a href="model.html" class="hero-btn">了解更多</a>
+                <a href="products.html" class="hero-btn primary">立即选购</a>
+                <a href="order.html" class="hero-btn">成为合作伙伴</a>
+            </div>
         </div>
     </header>
 
     <!-- 品牌介绍 -->
     <section class="brand-intro">
         <div class="container">
-            <h2>品牌故事</h2>
-            <p class="intro-text">
-                扎根沂源大地，传承三代匠心，以创新思维重构果业产业链。
-                我们致力于打造"优质果品+科技加工+农旅融合"的现代农业发展新模式，
-                让每一颗金桃都承载着农民增收的希望。
-            </p>
-        </div>
-    </section>
-
-    <!-- 品牌价值点 -->
-    <section class="value-points">
-        <div class="container">
-            <div class="value-grid">
-                <div class="value-item">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>分布式加工</h3>
-                    <p>多点联动，就近加工</p>
+            <div class="brand-grid">
+                <div class="brand-image" data-aos="fade-right">
+                    <img src="assets/orchard-picking.jpg" alt="果园手摘桃">
                 </div>
-                <div class="value-item">
-                    <i class="fas fa-mountain"></i>
-                    <h3>农旅融合</h3>
-                    <p>产地体验，观光采摘</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-recycle"></i>
-                    <h3>生态循环</h3>
-                    <p>果渣再利用，零废弃处理</p>
-                </div>
-                <div class="value-item">
-                    <i class="fas fa-flag"></i>
-                    <h3>政策助力</h3>
-                    <p>响应国家战略，助力乡村振兴</p>
+                <div class="brand-content" data-aos="fade-left">
+                    <h2>品牌故事</h2>
+                    <p class="intro-text">
+                        "果链益农"基于果业价值倍增理念，构建产消共同体一体化升级路径，打造沂源金黄金桃的产业新生态。
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA按钮区 -->
+    <!-- 产品简介 -->
+    <section class="product-highlights">
+        <div class="container">
+            <h2>产品展示</h2>
+            <div class="product-grid">
+                <div class="product-card" data-aos="fade-up">
+                    <div class="card-image">
+                        <img src="assets/peach-specs.jpg" alt="金黄金桃理化指标">
+                    </div>
+                    <h3>金黄金桃理化指标</h3>
+                    <a href="products.html" class="card-link">查看详情</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card-image">
+                        <img src="assets/processed-products.jpg" alt="深加工产品">
+                    </div>
+                    <h3>深加工产品</h3>
+                    <a href="products.html" class="card-link">查看详情</a>
+                </div>
+                <div class="product-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card-image">
+                        <img src="assets/gift-box.jpg" alt="礼盒展示">
+                    </div>
+                    <h3>精品礼盒</h3>
+                    <a href="products.html" class="card-link">查看详情</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 模式与价值链亮点 -->
+    <section class="model-innovation">
+        <div class="container">
+            <h2>创新模式</h2>
+            <div class="model-slider" data-aos="fade-up">
+                <div class="model-track">
+                    <div class="model-item">
+                        <i class="fas fa-industry"></i>
+                        <h3>分布式加工</h3>
+                        <p>就近加工，保证新鲜</p>
+                    </div>
+                    <div class="model-item">
+                        <i class="fas fa-mountain"></i>
+                        <h3>农旅融合</h3>
+                        <p>观光采摘，体验农事</p>
+                    </div>
+                    <div class="model-item">
+                        <i class="fas fa-recycle"></i>
+                        <h3>生态循环</h3>
+                        <p>零废弃，可持续</p>
+                    </div>
+                    <div class="model-item">
+                        <i class="fas fa-microchip"></i>
+                        <h3>技术赋能</h3>
+                        <p>智慧农业，科技助农</p>
+                    </div>
+                    <div class="model-item">
+                        <i class="fas fa-handshake"></i>
+                        <h3>合作社机制</h3>
+                        <p>共建共享，互利共赢</p>
+                    </div>
+                </div>
+                <a href="model.html" class="model-more">了解更多 →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 农户故事 -->
+    <section class="farmer-stories">
+        <div class="container">
+            <h2>农户故事</h2>
+            <p class="section-subtitle">真实改变，看得见的增收</p>
+            <div class="stories-grid" data-aos="fade-up">
+                <div class="story-item">
+                    <img src="assets/farmer-1.jpg" alt="农户故事1">
+                </div>
+                <div class="story-item video">
+                    <video controls poster="assets/story-video-cover.jpg">
+                        <source src="assets/farmer-story.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="story-item">
+                    <img src="assets/farmer-2.jpg" alt="农户故事2">
+                </div>
+            </div>
+            <a href="farmers.html" class="stories-more">查看更多故事</a>
+        </div>
+    </section>
+
+    <!-- 产品订购与合作 -->
     <section class="cta-section">
         <div class="container">
-            <div class="cta-buttons">
-                <a href="model.html" class="cta-btn">了解更多</a>
-                <a href="products.html" class="cta-btn primary">立即选购</a>
-                <a href="order.html" class="cta-btn">成为合作伙伴</a>
+            <h2>立即行动</h2>
+            <div class="product-carousel" data-aos="fade-up">
+                <!-- 产品轮播将通过JavaScript实现 -->
+                <div class="carousel-items">
+                    <div class="carousel-item">
+                        <img src="assets/fresh-peach.jpg" alt="鲜果">
+                        <h3>新鲜金桃</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/gift-box-premium.jpg" alt="礼盒">
+                        <h3>精品礼盒</h3>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/dried-peach.jpg" alt="果干">
+                        <h3>特制果干</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="cooperation-advantages">
+                <div class="advantage-item">
+                    <i class="fas fa-certificate"></i>
+                    <span>品质保证</span>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-truck"></i>
+                    <span>全国配送</span>
+                </div>
+                <div class="advantage-item">
+                    <i class="fas fa-headset"></i>
+                    <span>专属客服</span>
+                </div>
+            </div>
+            <div class="action-buttons" data-aos="fade-up">
+                <a href="products.html" class="action-btn">在线订购</a>
+                <a href="contact.html" class="action-btn">合作咨询</a>
+                <a href="#" class="action-btn" id="joinGroupBtn">加入社群团购</a>
             </div>
         </div>
     </section>
@@ -123,6 +226,14 @@
         </div>
     </footer>
 
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out',
+            once: true
+        });
+    </script>
     <script src="js/main.js"></script>
 </body>
 </html> 

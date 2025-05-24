@@ -2,34 +2,129 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 移动端菜单切换
     const menuToggle = document.querySelector('.menu-toggle');
-    const navCenter = document.querySelector('.nav-center');
-    const navRight = document.querySelector('.nav-right');
-    
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            navCenter.classList.toggle('active');
-            navRight.classList.toggle('active');
-        });
-    }
-    
-    // 搜索框交互
+    const navLinks = document.querySelector('.nav-links');
+
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+    });
+
+    // 搜索功能
     const searchInput = document.querySelector('.search-input');
     const searchIcon = document.querySelector('.search-icon');
-    
-    if (searchIcon) {
-        searchIcon.addEventListener('click', () => {
-            if (searchInput.value.trim()) {
-                handleSearch(searchInput.value);
-            } else {
-                searchInput.focus();
-            }
+
+    searchIcon.addEventListener('click', () => {
+        if (searchInput.value.trim()) {
+            // 实现搜索功能
+            console.log('Searching for:', searchInput.value);
+        }
+    });
+
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' && searchInput.value.trim()) {
+            // 实现搜索功能
+            console.log('Searching for:', searchInput.value);
+        }
+    });
+
+    // 产品轮播
+    const carousel = document.querySelector('.carousel-items');
+    if (carousel) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        carousel.addEventListener('mousedown', (e) => {
+            isDown = true;
+            carousel.classList.add('active');
+            startX = e.pageX - carousel.offsetLeft;
+            scrollLeft = carousel.scrollLeft;
+        });
+
+        carousel.addEventListener('mouseleave', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mouseup', () => {
+            isDown = false;
+            carousel.classList.remove('active');
+        });
+
+        carousel.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - carousel.offsetLeft;
+            const walk = (x - startX) * 2;
+            carousel.scrollLeft = scrollLeft - walk;
         });
     }
-    
-    if (searchInput) {
-        searchInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && searchInput.value.trim()) {
-                handleSearch(searchInput.value);
+
+    // 模式滑块
+    const modelTrack = document.querySelector('.model-track');
+    if (modelTrack) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        modelTrack.addEventListener('mousedown', (e) => {
+            isDown = true;
+            modelTrack.classList.add('active');
+            startX = e.pageX - modelTrack.offsetLeft;
+            scrollLeft = modelTrack.scrollLeft;
+        });
+
+        modelTrack.addEventListener('mouseleave', () => {
+            isDown = false;
+            modelTrack.classList.remove('active');
+        });
+
+        modelTrack.addEventListener('mouseup', () => {
+            isDown = false;
+            modelTrack.classList.remove('active');
+        });
+
+        modelTrack.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - modelTrack.offsetLeft;
+            const walk = (x - startX) * 2;
+            modelTrack.scrollLeft = scrollLeft - walk;
+        });
+    }
+
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // 社群团购按钮点击事件
+    const joinGroupBtn = document.getElementById('joinGroupBtn');
+    if (joinGroupBtn) {
+        joinGroupBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // 这里可以添加弹窗或其他交互
+            alert('请关注我们的公众号加入社群！');
+        });
+    }
+
+    // 视频加载失败时的处理
+    const heroVideo = document.getElementById('hero-video');
+    if (heroVideo) {
+        heroVideo.addEventListener('error', () => {
+            const fallbackImage = heroVideo.querySelector('img');
+            if (fallbackImage) {
+                heroVideo.style.display = 'none';
+                fallbackImage.style.display = 'block';
             }
         });
     }
@@ -37,30 +132,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // 导航栏滚动效果
     let lastScroll = 0;
     const navbar = document.querySelector('.navbar');
-
+    
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
-        // 添加/移除导航栏背景
-        if (currentScroll > 50) {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        
+        if (currentScroll > lastScroll && currentScroll > 100) {
+            // 向下滚动
+            navbar.classList.add('hide');
         } else {
-            navbar.style.background = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.boxShadow = 'none';
+            // 向上滚动
+            navbar.classList.remove('hide');
         }
-
+        
+        if (currentScroll > 100) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
         lastScroll = currentScroll;
     });
 });
-
-// 处理搜索
-function handleSearch(query) {
-    // 这里可以实现搜索逻辑
-    console.log('Searching for:', query);
-    // 例如：跳转到搜索结果页面
-    // window.location.href = `/search?q=${encodeURIComponent(query)}`;
-}
 
 // 滚动动画
 const observerOptions = {
@@ -92,36 +184,6 @@ document.addEventListener('DOMContentLoaded', () => {
         item.style.animation = `slideUp 0.5s ease-out ${index * 0.1}s forwards`;
         observer.observe(item);
     });
-});
-
-// 平滑滚动
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
-
-// 视频加载失败时的回退方案
-window.addEventListener('load', () => {
-    const video = document.getElementById('hero-video');
-    if (video) {
-        video.addEventListener('error', () => {
-            video.style.display = 'none';
-            const heroSection = document.querySelector('.hero');
-            if (heroSection) {
-                heroSection.style.backgroundImage = 'url(assets/hero-bg.jpg)';
-                heroSection.style.backgroundSize = 'cover';
-                heroSection.style.backgroundPosition = 'center';
-            }
-        });
-    }
 });
 
 // 创建视差滚动效果

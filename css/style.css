@@ -193,6 +193,7 @@ body {
 
 .hero-content {
     position: relative;
+    z-index: 2;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -201,7 +202,6 @@ body {
     text-align: center;
     color: var(--white);
     background: rgba(0, 0, 0, 0.4);
-    padding: 2rem;
 }
 
 .hero-content h1 {
@@ -212,120 +212,298 @@ body {
 }
 
 .hero-content p {
-    font-family: "Xingkai SC", "STXingkai", "华文行楷", cursive;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-}
-
-.slogan {
-    font-size: 3.5rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
-    animation: float 3s ease-in-out infinite;
-}
-
-.sub-slogan {
     font-size: 1.5rem;
-    opacity: 0;
-    animation: fadeIn 1s ease-out forwards;
-    animation-delay: 0.5s;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.hero-btn {
+    padding: 1rem 2rem;
+    border: 2px solid var(--white);
+    border-radius: 30px;
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transition);
+}
+
+.hero-btn.primary {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.hero-btn:hover {
+    background: var(--white);
+    color: var(--text-color);
+}
+
+.hero-btn.primary:hover {
+    background: transparent;
+    color: var(--white);
 }
 
 /* 品牌介绍区域 */
 .brand-intro {
-    padding: 5rem 0;
-    background: var(--light-bg);
+    padding: 6rem 0;
+    background: var(--light-gray);
 }
 
-.brand-intro h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: var(--secondary-color);
-}
-
-.intro-text {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.2rem;
-    line-height: 1.8;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: slideUp 1s ease-out forwards;
-}
-
-/* 价值点展示区域 */
-.value-points {
-    padding: 5rem 0;
-}
-
-.value-grid {
+.brand-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
 }
 
-.value-item {
+.brand-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.brand-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.brand-content .intro-text {
+    font-size: 1.2rem;
+    color: var(--dark-gray);
+    line-height: 1.8;
+}
+
+/* 产品亮点区域 */
+.product-highlights {
+    padding: 6rem 0;
+}
+
+.product-highlights h2 {
     text-align: center;
-    padding: 2rem;
+    margin-bottom: 3rem;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.product-card {
     background: var(--white);
     border-radius: 10px;
+    overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: var(--transition);
 }
 
-.value-item:hover {
+.product-card:hover {
     transform: translateY(-10px);
 }
 
-.value-item i {
+.card-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.product-card:hover .card-image img {
+    transform: scale(1.1);
+}
+
+.product-card h3 {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.card-link {
+    display: block;
+    text-align: center;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.card-link:hover {
+    background: var(--text-color);
+}
+
+/* 模型创新区域 */
+.model-innovation {
+    padding: 6rem 0;
+    background: var(--light-gray);
+}
+
+.model-slider {
+    position: relative;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.model-track {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.model-item {
+    flex: 0 0 300px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.model-item i {
     font-size: 2.5rem;
     color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
-.value-item h3 {
-    margin-bottom: 1rem;
-    color: var(--secondary-color);
+.model-more {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    background: var(--text-color);
+    color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: var(--transition);
+}
+
+.model-more:hover {
+    background: var(--primary-color);
+}
+
+/* 农民故事区域 */
+.farmer-stories {
+    padding: 6rem 0;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--dark-gray);
+    margin-bottom: 3rem;
+}
+
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.story-item {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.story-item img,
+.story-item video {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.stories-more {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
 }
 
 /* CTA按钮区域 */
 .cta-section {
-    padding: 5rem 0;
-    background: var(--light-bg);
+    padding: 6rem 0;
+    background: var(--light-gray);
 }
 
-.cta-buttons {
+.product-carousel {
+    margin-bottom: 3rem;
+}
+
+.carousel-items {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    padding: 1rem;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-item {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.carousel-item h3 {
+    padding: 1rem;
+    text-align: center;
+}
+
+.cooperation-advantages {
     display: flex;
     justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
-.cta-btn {
-    display: inline-block;
+.advantage-item {
+    text-align: center;
+}
+
+.advantage-item i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.action-btn {
     padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: var(--transition);
-    border: 2px solid var(--primary-color);
-}
-
-.cta-btn.primary {
     background: var(--primary-color);
     color: var(--white);
+    text-decoration: none;
+    border-radius: 30px;
+    transition: var(--transition);
 }
 
-.cta-btn:not(.primary) {
-    color: var(--primary-color);
-}
-
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.action-btn:hover {
+    background: var(--text-color);
 }
 
 /* 页脚样式 */
@@ -358,24 +536,6 @@ body {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* 动画效果 */
-@keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-@keyframes slideUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* 响应式设计 */
 @media (max-width: 1024px) {
     .search-input {
@@ -384,6 +544,19 @@ body {
     
     .search-input:focus {
         width: 200px;
+    }
+
+    .brand-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stories-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -412,21 +585,33 @@ body {
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .slogan {
+    .hero-content h1 {
         font-size: 2.5rem;
     }
 
-    .sub-slogan {
+    .hero-content p {
         font-size: 1.2rem;
     }
 
-    .value-grid {
+    .product-grid {
         grid-template-columns: 1fr;
     }
 
-    .cta-buttons {
+    .stories-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cooperation-advantages {
         flex-direction: column;
-        align-items: center;
+        gap: 2rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .action-btn {
+        text-align: center;
     }
 }
 
